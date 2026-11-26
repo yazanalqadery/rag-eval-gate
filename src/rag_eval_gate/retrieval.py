@@ -31,7 +31,7 @@ class Index:
         self.titles = [chunk_title(c) for c in chunks]
         self.vectors = embed(chunks)  # ONE API call for all chunks
 
-    def search(self, question: str, k: int = 2, min_score: float = 0.4) -> list[Hit]:
+    def search(self, question: str, k: int = 2, min_score: float = 0.28) -> list[Hit]:
         """Top-k chunks, best first. Chunks below min_score are dropped (guard 1)."""
         q_vec = embed([question])[0]
         hits = [
