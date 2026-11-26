@@ -1,5 +1,6 @@
 """Split Markdown documents into chunks, one per '## ' section."""
 
+
 def chunk_by_section(text: str) -> list[str]:
     """Return one chunk per '## ' heading. The heading stays as the chunk's first line.
     '### ' subheadings stay inside their parent section."""
@@ -15,6 +16,7 @@ def chunk_by_section(text: str) -> list[str]:
     if current:  # don't forget the last chunk
         chunks.append("\n".join(current).strip())
     return [chunk for chunk in chunks if chunk]
+
 
 def chunk_title(chunk: str) -> str:
     return chunk.splitlines()[0]

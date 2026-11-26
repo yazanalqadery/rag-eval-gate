@@ -23,11 +23,21 @@ def test_title_is_first_line():
 
 
 def test_real_policy_has_five_sections():
-    policy = (Path(__file__).parent.parent / "data" / "policy.md").read_text(encoding="utf-8")
+    policy = (Path(__file__).parent.parent / "data" / "policy.md").read_text(
+        encoding="utf-8"
+    )
     titles = [chunk_title(c) for c in chunk_by_section(policy)]
-    assert titles == ["Refunds", "Double charges", "Subscriptions", "Login problems", "Office"]
+    assert titles == [
+        "Refunds",
+        "Double charges",
+        "Subscriptions",
+        "Login problems",
+        "Office",
+    ]
 
 
 def test_subheadings_stay_inside_their_section():
     text = "## Refunds\nRefunds take 5 days.\n### Gift cards\nNot refundable."
-    assert chunk_by_section(text) == ["Refunds\nRefunds take 5 days.\n### Gift cards\nNot refundable."]
+    assert chunk_by_section(text) == [
+        "Refunds\nRefunds take 5 days.\n### Gift cards\nNot refundable."
+    ]

@@ -1,0 +1,5 @@
+Rewrite the customer's message as one short, clear English question.
+The message may be in English, Arabic, or Arabizi (Arabic written with Latin letters
+and numbers, for example 3 for ع and 7 for ح).
+Always write the question in English, even if the message is in Arabic.
+Reply with only the rewritten question.
